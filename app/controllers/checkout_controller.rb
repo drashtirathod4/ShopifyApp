@@ -13,8 +13,5 @@ class CheckoutController < ApplicationController
             success_url: root_url,
             cancel_url: root_url,
         })
-        # respond_to do |format|
-        #     format.js { render layout: false }
-        # end
     end
 end
