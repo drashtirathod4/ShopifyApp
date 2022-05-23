@@ -12,6 +12,11 @@
       "./node_modules/@rails/webpacker/package/babel/preset.js"
     ]
   },
+  "browser": {
+    "@hotwired/turbo-rails": false,
+    "@hotwired/stimulus-loading": false,
+    "@hotwired/stimulus": false
+  },
   "browserslist": [
     "defaults"
   ],
