@@ -83,4 +83,4 @@ production:
   <<: *default
   database: shopify_app_production
   username: drashtirathod
-  password: <%= Rails.application.credentials[:SHOPIFY_APP_DATABASE_PASSWORD] %>
+  password: <%= ENV["SHOPIFY_APP_DATABASE_PASSWORD"] %>
