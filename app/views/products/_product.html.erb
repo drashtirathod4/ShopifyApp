@@ -6,13 +6,18 @@
 
   <p>
     <strong>Price:</strong>
-    <%= product.price %>
+    <%= number_to_currency(product.price/100) %>
   </p>
 
   <p>
     <strong>Payment :</strong>
     <%# <%= link_to "Buy Now!", checkout_create_path(id: product.id), method: :post, remote: true %> 
     <%= button_to "Buy now!", checkout_create_path(:format => :js), form: { "data-type" => "script" }, params: {id: product.id}, remote: true %>
+  </p>
+
+  <p>
+    <strong>Sales Count:</strong>
+    <%= product.sales_count %>
   </p>
 
 </div>
