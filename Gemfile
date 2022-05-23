@@ -12,8 +12,6 @@ gem 'pry'
 
 gem 'jquery-rails'
 
-gem 'webpacker', github: 'rails/webpacker'
-
 gem "figaro"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
