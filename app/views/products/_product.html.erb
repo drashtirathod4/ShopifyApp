@@ -9,4 +9,10 @@
     <%= product.price %>
   </p>
 
+  <p>
+    <strong>Payment :</strong>
+    <%# <%= link_to "Buy Now!", checkout_create_path(id: product.id), method: :post, remote: true %> 
+    <%= button_to "Buy now!", checkout_create_path(:format => :js), form: { "data-type" => "script" }, params: {id: product.id}, remote: true %>
+  </p>
+
 </div>
