@@ -1,12 +1,17 @@
 <div id="<%= dom_id product %>">
   <p>
-    <strong>Name:</strong>
+    <strong>Name :</strong>
     <%= product %>
   </p>
 
   <p>
-    <strong>Price:</strong>
-    <%= number_to_currency(product.price/100) %>
+    <strong>Price :</strong>
+    <i class="fa fa-inr"></i><%= product.price/100 %>
+  </p>
+
+  <p>
+    <strong>Stripe Product id :</strong>
+    <%= product.stripe_product_id %>
   </p>
 
   <p>
@@ -15,7 +20,7 @@
   </p>
 
   <p>
-    <strong>Sales Count:</strong>
+    <strong>Sales Count :</strong>
     <%= product.sales_count %>
   </p>
 
