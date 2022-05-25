@@ -23,7 +23,13 @@
       <%= link_to "Log in", new_user_session_path %>&nbsp;&nbsp;&nbsp;&nbsp;
       <%= link_to "Register", new_user_registration_path %>
     <% end %><br>
-    <br><hr><br>
+    <br><hr>
+    <h1>Shopping Cart</h1>
+    <% @cart.each do |product| %>
+      <b><%= product.name %></b>
+      <br><br>
+    <% end %>
+    <hr><br>
     <%= yield %>
   </body>
 </html>

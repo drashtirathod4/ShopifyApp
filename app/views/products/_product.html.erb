@@ -20,6 +20,15 @@
   </p>
 
   <p>
+    <strong>Shopping Cart :</strong>
+    <% if @cart.include?(product) %>
+      <%= button_to "Remove from the cart", remove_from_cart_path(product), method: :delete %>
+    <% else %>
+      <%= button_to "Add to cart", add_to_cart_path(product), method: :post %>
+    <% end %>
+  </p>
+
+  <p>
     <strong>Payment :</strong>
     <%= button_to "Buy now!", checkout_create_path(:format => :js), form: { "data-type" => "script" }, params: {id: product.id}, remote: true, data: { disable_with: "Validating..." } %>
   </p>
