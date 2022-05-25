@@ -14,6 +14,7 @@
   <body><br>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p><br>
+
     <b><%= link_to "Products", products_path %></b>&nbsp;&nbsp;&nbsp;&nbsp;
     <% if current_user %>
       <%= link_to current_user.email, edit_user_registration_path %>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -23,7 +24,23 @@
       <%= link_to "Log in", new_user_session_path %>&nbsp;&nbsp;&nbsp;&nbsp;
       <%= link_to "Register", new_user_registration_path %>
     <% end %><br>
-    <br><hr><br>
+
+    <br><hr>
+
+    <h1>Shopping Cart</h1>
+    <% @cart.each do |product| %>
+      <b><%= product.name %></b>
+      <br><br>
+    <% end %>
+
+    <% if @cart.present? %>
+      <%= @cart.collect { |item| item.to_builder.attributes! } %>
+      <%= button_to "Buy now!", checkout_create_path(:format => :js), form: { "data-type" => "script" }, remote: true, data: { disable_with: "Validating..." } %>
+      <br>
+    <% else %>
+      <h4>Cart is empty!</h4>
+    <% end %>
+   <hr><br>
     <%= yield %>
   </body>
 </html>
