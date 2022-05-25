@@ -1,3 +1,8 @@
 <h1>Success</h1>
 <p><b>Checkout Status : <%= @session_with_expand.payment_status %></b></p>
 <p><b>Amount Paid : <i class="fa fa-inr"></i><%= @session_with_expand.amount_total/100.to_f %></b></p>
+
+<% @session_with_expand.line_items.data.each do |line_item| %>  
+    <% product = Product.find_by(stripe_product_id: line_item.price.product) %>
+    <p><b><%= product.name %></b></p>
+<% end %>
