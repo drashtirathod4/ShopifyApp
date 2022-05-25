@@ -29,11 +29,6 @@
   </p>
 
   <p>
-    <strong>Payment :</strong>
-    <%= button_to "Buy now!", checkout_create_path(:format => :js), form: { "data-type" => "script" }, params: {id: product.id}, remote: true, data: { disable_with: "Validating..." } %>
-  </p>
-
-  <p>
     <strong>Sales Count :</strong>
     <%= product.sales_count %>
   </p>
